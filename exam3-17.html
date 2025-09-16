@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam3-17</title>
+</head>
+<body>
+    <h3>온도를 조절해보자</h3>
+    <hr>
+    <form>
+        <p>지속시간: 0~10시간</p>
+        <input type="number" min="0" max="10" step="1"><br><br>
+        <p>온도 설정: 10&deg;</p>
+        <input type="range" min="20" max="30" list="temperatures">30&deg;
+        <datalist id="temperatures">
+            <option value="12" label="low">
+            <option value="20" label="medium">
+            <option value="28" label="high">
+        </datalist>
+    </form>
+</body>
+</html>
