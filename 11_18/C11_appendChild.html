@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C11_appendChild</title>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const div1 = document.querySelector("#first");
+        const div2 = document.querySelector("#second");
+        const newh1 = document.createElement("h1");
+        newh1.textContent = "이동하는 h1";
+
+        const toFirst = () => {
+            div1.appendChild(newh1);
+            setTimeout(toSecond, 2000);
+        }
+        const toSecond = () => {
+            div2.appendChild(newh1);
+            setTimeout(toFirst, 2000);
+        }
+        toFirst()
+    })
+</script>
+<body>
+    <div id="first">
+        <h1>div1</h1>
+    </div>
+    <hr>
+    <div id="second">
+        <h1>div2</h1>
+    </div>
+</body>
+</html>

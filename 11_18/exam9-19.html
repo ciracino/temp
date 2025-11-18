@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam9-19</title>
+</head>
+<script>
+    function drawImage() {
+        let sel = document.getElementById("fruits");
+        let img = document.getElementById("fruitImage");
+        img.src = sel.options[sel.selectedIndex].value;
+    }
+</script>
+<body onload="drawImage()">
+    <h3>select 객체에서 선택한 이미지 출력</h3>
+    <hr>
+    선택한 이미지를 출력합니다
+    <form>
+        <select id="fruits" onchange="drawImage()">
+            <option value="media/file1.jpg">햄찌1</option>
+            <option value="media/file2.jpg">햄찌2</option>
+            <option value="media/file3.jpg">햄찌3</option>
+        </select>
+        <img id="fruitImage" src="media/file1.jpg" alt="">
+    </form>
+</body>
+</html>
