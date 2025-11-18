@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C11_removeEventListener</title>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let count = 0;
+        let isConnected = false;
+
+        const h1 = document.querySelector("h1");
+        const p = document.querySelector("p");
+        const connectBtn = document.querySelector("#connect");
+        const disconnectBtn = document.querySelector("#disconnect");
+
+        const listener = (event) => {
+            h1.textContent = `click count: ${++count}`;
+        }
+
+        connectBtn.addEventListener("click", () => {
+            if (isConnected === false) {
+                h1.addEventListener("click", listener)
+                p.textContent = "이벤트 연결 상태: 연결"
+                isConnected = true
+            }
+        })
+
+        disconnectBtn.addEventListener("click", () => {
+            if (isConnected === true) {
+                h1.removeEventListener("click", listener)
+                p.textContent = "이벤트 연결 상태: 해제"
+                isConnected = false
+            }
+        })
+    })
+</script>
+<body>
+    <h1>click count: 0</h1>
+    <button id="connect">이벤트 연결</button>
+    <button id="disconnect">이벤트 제거</button>
+    <p>이벤트 연결 상태: 해제</p>
+</body>
+</html>

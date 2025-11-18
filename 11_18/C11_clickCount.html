@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C11_clickCount</title>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let count = 0;
+        const h1 = document.querySelector("h1");
+
+        h1.addEventListener("click", (event) => {
+            count++;
+            h1.textContent = `click count: ${count}`;
+        })
+    })
+</script>
+<style>
+    h1 {
+        /* 복사 붙여넣기 방지 코드 (글자 선택이 안됨) */
+        user-select: none;
+    }
+</style>
+<body>
+    <h1>click count: 0</h1>
+</body>
+</html>
