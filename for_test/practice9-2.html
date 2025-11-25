@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice9-2</title>
+</head>
+<script>
+    function printInitImage(image) {
+        let found = null;
+
+        const target = document.querySelector("img");
+        target.src = image;
+    }
+</script>
+<body>
+    <input type="radio" name="image" value="media/image1.jpg" onclick="printInitImage(this.value)" checked>image1
+    <input type="radio" name="image" value="media/image2.jpg" onclick="printInitImage(this.value)">image2
+    <input type="radio" name="image" value="media/image3.jpg" onclick="printInitImage(this.value)">image3
+    <br><br><br>
+    <img src="media/image1.jpg" width="400", height="400" alt="">
+</body>
+</html>

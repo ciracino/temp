@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice9-4</title>
+</head>
+<body onload="doScroll()">
+    <h3>마우스 휠을 이용한 이미지 확대 및 축소</h3>
+    <hr>
+    <img src="media/image1.jpg" width="300" height="300">
+</body>
+<script>
+    let scale = 1;
+    document.getElementById("image").onwhee = function(e) {
+        e.preventDefault();
+        if (e.wheelData > 0) {
+            img.width -= img.width * 0.05;
+            img.height -= img.height * 0.05;
+        } else {
+            img.width += img.width * 0.05;
+            img.height += img.height * 0.05;
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exam10-4</title>
+</head>
+<body>
+    <h3>텍스트 자동 회전. 마우스 클릭시 중단</h3>
+    <hr>
+    <div>
+        <span id="span" style="background-color: yellow">
+            자동 회전하는 텍스트
+        </span>
+    </div>
+</body>
+<script>
+    let span = document.getElementById("span");
+    let timer = setInterval("doRotate()", 200);
+    
+    span.onclick = function(e) {
+        clearInterval(timer);
+    }
+
+    function doRotate() {
+        let str = span.innerHTML;
+        let firstChar = str.substr(0,1);
+        let remains = str.substr(1, str.length - 1);
+        str = remains + firstChar;
+        span.innerHTML = str;
+    }
+</script>
+</html>
